@@ -8,7 +8,7 @@ $path = $_GET["path"];
 $folderPath =  preg_match('/\/+[0-9\-_]+\/+/', $path, $matches);
 $descriptionPath = $matches[0].'description.txt';
 
-$description = readDisk($downloadURL.'?public_key=https://yadi.sk/d/Xbi2Ydwq3GideD&path='.$descriptionPath);
+$description = readDisk($downloadURL.'?public_key='.$publicKey.'&path='.$descriptionPath);
 
 $description = json_decode( file_get_contents( json_decode($description) -> {'href'} ) );
 

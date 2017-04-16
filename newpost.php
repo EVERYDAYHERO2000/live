@@ -28,7 +28,7 @@ include 'php/global.php';
   }
 
 
-$description = readDisk($downloadURL.'?public_key=https://yadi.sk/d/Xbi2Ydwq3GideD&path='.$folder.'description.txt');
+$description = readDisk($downloadURL.'?public_key='.$publicKey.'&path='.$folder.'description.txt');
 
 $description = json_decode( file_get_contents( json_decode($description) -> {'href'} ) );
 
@@ -37,7 +37,7 @@ $comments = json_decode('{ "date" : "'.$date.'", "path" : "'.$newPath.'", "user"
 
 $description[] = $comments;
 
-$comments = json_encode($description);
+$comments = json_encode($description, JSON_UNESCAPED_UNICODE);
 
 $commentsSize = strlen($comments);
 

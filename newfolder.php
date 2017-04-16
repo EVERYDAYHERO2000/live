@@ -18,6 +18,7 @@
   $commentsHeader = 'data:text/csv;charset=utf-8,';
   $path = '/'.$folderName.'/'.$filename;
   $comments = '[{ "date" : "'.$folderName.'", "path" : "'.$path.'", "user" : "'.$login.'", "comment" : "" }]';
+
   $commentsSize = strlen($comments);
   
   uploadFile( $uploadURL.'?path=disk:/'.$projectFolderName.'/'.$folderName.'/description.txt', $commentsHeader.$comments, $commentsSize);

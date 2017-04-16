@@ -2,8 +2,8 @@
 
 include 'php/global.php';
 
-  $login = $_POST["login"];
-  $comment = $_POST["comment"];
+  $login = addslashes($_POST["login"]);
+  $comment = addslashes($_POST["comment"]);
   
   $date = date('m-d-Y_His');
 
